@@ -1,5 +1,7 @@
 package ex1_dipendente;
 
+import java.time.LocalDateTime;
+
 public abstract class Dipendente implements Lavorare {
     private final String matricola;  //non puo essere modificato dopo l'inizializzazione
     private Dipartimento dipartimento;  //preso da enum
@@ -29,11 +31,12 @@ public abstract class Dipendente implements Lavorare {
     }
 
     //Calcolo dello stipendio
+    //mi assicuro che ogni sottoclasse abbia questo metodo ma visto che cambia x ogni classe di dipendente lo metto abstract
     public abstract double calculateSalary();
 
     //Metodo checkIn
     @Override
-    public void checkIn(){
-        System.out.println("Dipendente: "+ matricola+ " check-in fatto.");
+    public void checkIn(LocalDateTime data){
+        System.out.println("Dipendente: "+ matricola+ " check-in fatto in data: " + data);
     }
 }

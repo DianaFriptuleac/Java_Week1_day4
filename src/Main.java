@@ -1,5 +1,7 @@
 import ex1_dipendente.*;
 
+import java.time.LocalDateTime;
+
 public class Main {
     public static void main(String[] args) {
        // System.out.println("------------------------EX1------------------------");
@@ -20,17 +22,22 @@ public class Main {
         Volontario secondVolontario = new Volontario("Anna", 29, "CV Anna Neri");
         Volontario thirdVolontario = new Volontario("Luca", 31, "CV Luca Verdi");
 
+
+
         // Array di lavoratori (dipendenti e volontari)
         Lavorare[] persone = {firstDipendente, secondDipendente, thirdDipendente, firstVolontario, secondVolontario, thirdVolontario};
 
+
+
         // Iterazione e chiamata del metodo checkIn per ogni lavoratore
-        for (Lavorare lavoratore : persone) {
-            lavoratore.checkIn();  // Ora il metodo checkIn sarà disponibile
+        for (Lavorare /*nome della classe*/  lavoratore  : persone /*nome array*/ ) {
+            lavoratore.checkIn(LocalDateTime.now());  // Ora il metodo checkIn sarà disponibile
         }
+
 
         // Stampo gli stipendi solo per i dipendenti
         double totaleStipendiDaPagare = 0.0;
-        for (Dipendente dipendente : new Dipendente[]{firstDipendente, secondDipendente, thirdDipendente}) {
+        for (Dipendente /*nome della classe*/ dipendente /*nome array*/ : new Dipendente[]{firstDipendente, secondDipendente, thirdDipendente}) {
             // Stampo i dettagli di ogni dipendente
             System.out.println("Numero della matricola: " + dipendente.getMatricola() +
                     " Stipendio mensile: " + dipendente.calculateSalary() + " euro");
@@ -38,8 +45,13 @@ public class Main {
             totaleStipendiDaPagare += dipendente.calculateSalary();
         }
 
+
+
       // Stampa il totale degli stipendi dopo aver iterato su tutti i dipendenti
         System.out.println("Totali stipendi da pagare questo mese: " + totaleStipendiDaPagare + " euro.");
+
+
+
 
         // Stampo la lista dei volontari
         System.out.println("\n------------------------Lista dei Volontari------------------------");
