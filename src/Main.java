@@ -41,7 +41,15 @@ public class Main {
       // Stampa il totale degli stipendi dopo aver iterato su tutti i dipendenti
         System.out.println("Totali stipendi da pagare questo mese: " + totaleStipendiDaPagare + " euro.");
 
+        // Stampo la lista dei volontari
+        System.out.println("\n------------------------Lista dei Volontari------------------------");
+        Volontario[] volontari = {firstVolontario, secondVolontario, thirdVolontario};
 
+        for (Volontario volontario : volontari) {
+            System.out.println("Nome: " + volontario.getNome() +
+                    ", Età: " + volontario.getEta() +
+                    ", CV: " + volontario.getCv());
+        }
 
 
 
