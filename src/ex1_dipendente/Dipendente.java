@@ -1,6 +1,6 @@
 package ex1_dipendente;
 
-public abstract class Dipendente {
+public abstract class Dipendente implements Lavorare {
     private final String matricola;  //non puo essere modificato dopo l'inizializzazione
     private Dipartimento dipartimento;  //preso da enum
 
@@ -30,4 +30,10 @@ public abstract class Dipendente {
 
     //Calcolo dello stipendio
     public abstract double calculateSalary();
+
+    //Metodo checkIn
+    @Override
+    public void checkIn(){
+        System.out.println("Dipendente: "+ matricola+ " check-in fatto.");
+    }
 }

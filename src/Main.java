@@ -15,12 +15,22 @@ public class Main {
         Dipendente secondDipendente = new DipendentePartTime("CD5824", Dipartimento.AMMINISTRAZIONE, 10.5, 90);
         Dipendente thirdDipendente = new Dirigente("CD3524", Dipartimento.VENDITE, 3150.00, 400);
 
-        //Array di dipendenti
-        Dipendente[] dipendenti = {firstDipendente, secondDipendente,thirdDipendente};
+        // Volontari
+        Volontario firstVolontario = new Volontario("Mario", 30, "CV Mario Rossi");
+        Volontario secondVolontario = new Volontario("Anna", 29, "CV Anna Neri");
+        Volontario thirdVolontario = new Volontario("Luca", 31, "CV Luca Verdi");
 
-        //Stampo
+        // Array di lavoratori (dipendenti e volontari)
+        Lavorare[] persone = {firstDipendente, secondDipendente, thirdDipendente, firstVolontario, secondVolontario, thirdVolontario};
+
+        // Iterazione e chiamata del metodo checkIn per ogni lavoratore
+        for (Lavorare lavoratore : persone) {
+            lavoratore.checkIn();  // Ora il metodo checkIn sarà disponibile
+        }
+
+        // Stampo gli stipendi solo per i dipendenti
         double totaleStipendiDaPagare = 0.0;
-        for (Dipendente dipendente : dipendenti) {
+        for (Dipendente dipendente : new Dipendente[]{firstDipendente, secondDipendente, thirdDipendente}) {
             // Stampo i dettagli di ogni dipendente
             System.out.println("Numero della matricola: " + dipendente.getMatricola() +
                     " Stipendio mensile: " + dipendente.calculateSalary() + " euro");
@@ -33,6 +43,6 @@ public class Main {
 
 
 
-    }
 
-}
+
+}}
